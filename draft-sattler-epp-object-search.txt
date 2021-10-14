@@ -169,7 +169,6 @@ Sattler                    Expires April 13, 2022               [Page 4]
 
 Internet-Draft               EPP Object Search              October 2021
 
-
 4.  EPP Command Mapping
 
    A detailed description of the EPP syntax and semantics can be found
@@ -247,9 +246,8 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData
-   S:          xmlns:maint="urn:ietf:params:xml:ns:epp:
-   S:                       object-search-0.1">
+   S:        <object-search:infData xmlns:maint=
+   S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list>
    S:            <object-search:item>
    S:              <object-search:domain>example.com
@@ -318,9 +316,8 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData
-   S:          xmlns:maint="urn:ietf:params:xml:ns:epp:
-   S:                       object-search-0.1">
+   S:        <object-search:infData xmlns:maint=
+   S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list>
    S:            <object-search:item>
    S:              <object-search:contact>sh8013
@@ -385,9 +382,8 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData
-   S:          xmlns:maint="urn:ietf:params:xml:ns:epp:
-   S:                       object-search-0.1">
+   S:        <object-search:infData xmlns:maint=
+   S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list>
    S:            <object-search:item>
    S:              <object-search:host>ns1.example.com
@@ -436,11 +432,12 @@ Internet-Draft               EPP Object Search              October 2021
 
    <CODE BEGINS>
    <?xml version="1.0" encoding="UTF-8"?>
-     <schema targetNamespace="urn:ietf:params:xml:ns:epp:
-       object-search-0.1"
+     <schema targetNamespace=
+       "urn:ietf:params:xml:ns:epp:object-search-0.1"
        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
        xmlns:epp="urn:ietf:params:xml:ns:epp-1.0"
-       xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1"
+       xmlns:object-search=
+         "urn:ietf:params:xml:ns:epp:object-search-0.1"
        xmlns="https://www.w3.org/2001/XMLSchema"
        elementFormDefault="qualified">
 
