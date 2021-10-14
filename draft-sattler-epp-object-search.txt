@@ -153,7 +153,9 @@ Internet-Draft               EPP Object Search              October 2021
 
 3.1.  Object Search Elements
 
-   Generally: Limit, minimum characters
+   The minimum character for a search pattern is up to server policy.
+   
+   The limit for the search results is up to server policy.
 
    <object-search:domain>
      The search pattern for the domain object; the attribute "type" is
@@ -242,9 +244,11 @@ Internet-Draft               EPP Object Search              October 2021
    element that identifies the object search namespace. The
    <object-search:infData> element contains the <object-search:list>
    element with zero or more <object-search:item> child elements. The
-   <object-search:item> element contains the following child elements:
-   
-   TBD
+   "total" attribute is REQUIRED and MUST contain the total number of
+   the search result. This allows the client to determine if the search
+   needs to be refined if the number is too large. The
+   <object-search:item> element contains <object-search:domain> child
+   elements defined in Section 3.1.
 
    Example of returning the list of object search items in an <info>
    response.
@@ -258,13 +262,15 @@ Internet-Draft               EPP Object Search              October 2021
    S:      <resData>
    S:        <object-search:infData xmlns:maint=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
-   S:          <object-search:list>
+   S:          <object-search:list total="2">
    S:            <object-search:item>
-   S:              <object-search:domain>example.com
+   S:              <object-search:domain type="name" filter="begins">
+   S:                example.com
    S:              </object-search:domain>
    S:            </object-search:item>
    S:            <object-search:item>
-   S:              <object-search:domain>example.net
+   S:              <object-search:domain type="name" filter="begins">
+   S:                example.net
    S:              </object-search:domain>
    S:            </object-search:item>
    S:          </object-search:list>
@@ -308,9 +314,11 @@ Internet-Draft               EPP Object Search              October 2021
    element that identifies the object search namespace. The
    <object-search:infData> element contains the <object-search:list>
    element with zero or more <object-search:item> child elements. The
-   <object-search:item> element contains the following child elements:
-   
-   TBD
+   "total" attribute is REQUIRED and MUST contain the total number of
+   the search result. This allows the client to determine if the search
+   needs to be refined if the number is too large. The
+   <object-search:item> element contains the <object-search:contact>
+   child element defined in Section 3.1.
 
 Sattler                    Expires April 13, 2022               [Page 7]
 
@@ -328,13 +336,15 @@ Internet-Draft               EPP Object Search              October 2021
    S:      <resData>
    S:        <object-search:infData xmlns:maint=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
-   S:          <object-search:list>
+   S:          <object-search:list total="12345678">
    S:            <object-search:item>
-   S:              <object-search:contact>sh8013
+   S:              <object-search:contact type="name" filter="contains">
+   S:                sh8013
    S:              </object-search:contact>
    S:            </object-search:item>
    S:            <object-search:item>
-   S:              <object-search:contact>sah8013
+   S:              <object-search:contact type="name" filter="contains">
+   S:                sah8013
    S:              </object-search:contact>
    S:            </object-search:item>
    S:          </object-search:list>
@@ -378,9 +388,11 @@ Internet-Draft               EPP Object Search              October 2021
    element that identifies the object search namespace. The
    <object-search:infData> element contains the <object-search:list>
    element with zero or more <object-search:item> child elements. The
-   <object-search:item> element contains the following child elements:
-   
-   TBD
+   "total" attribute is REQUIRED and MUST contain the total number of
+   the search result. This allows the client to determine if the search
+   needs to be refined if the number is too large. The
+   <object-search:item> element contains the <object-search:host> child
+   element defined in Section 3.1.
 
    Example of returning the list of object search items in an <info>
    response.
@@ -394,13 +406,15 @@ Internet-Draft               EPP Object Search              October 2021
    S:      <resData>
    S:        <object-search:infData xmlns:maint=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
-   S:          <object-search:list>
+   S:          <object-search:list total="34567">
    S:            <object-search:item>
-   S:              <object-search:host>ns1.example.com
+   S:              <object-search:host type="name" filter="ends">
+   S:                ns1.example.com
    S:              </object-search:host>
    S:            </object-search:item>
    S:            <object-search:item>
-   S:              <object-search:host>ns2.example.com
+   S:              <object-search:host type="name" filter="ends">
+   S:                ns2.example.com
    S:              </object-search:host>
    S:            </object-search:item>
    S:          </object-search:list>
