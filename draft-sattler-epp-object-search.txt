@@ -485,18 +485,10 @@ Internet-Draft               EPP Object Search              October 2021
 
 7.  Security Considerations
 
-   The security considerations of [RFC5730] apply in this document.
-   Additionally, a server MUST only provide maintenance information to
-   clients that are authorized. Suppose a client queries a maintenance
-   identifier that it is not authorized to access per Section 4.1.1.1
-   "Info Maintenance Item". In that case, the server SHOULD return an
-   EPP error result code of 2201 ("Authorization error") or 2303
-   ("Object does not exist") [RFC5730]. The list of top-level domains or
-   registry zones returned in the "Info Maintenance Item" response
-   SHOULD be filtered based on the top-level domains or registry zones
-   for which the client is authorized. Authorization of poll messages is
-   done at the time of poll message insertion and not at the time of
-   poll message consumption.
+   The mapping extensions described in this document do not provide any
+   security services beyond those described by EPP [RFC5730] and
+   protocol layers used by EPP.  The security considerations described
+   in these other specifications apply to this specification as well.
 
 Sattler                    Expires April 13, 2022              [Page 11]
 
