@@ -579,11 +579,6 @@ Internet-Draft               EPP Object Search              October 2021
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RFC9038]  Gould, J. and M. Casanova, "Extensible Provisioning
-              Protocol (EPP) Unhandled Namespaces", RFC 9038,
-              DOI 10.17487/RFC9038, May 2021,
-              <https://www.rfc-editor.org/info/rfc9038>.
-
 9.2.  Informative References
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
