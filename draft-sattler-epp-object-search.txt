@@ -163,11 +163,18 @@ Internet-Draft               EPP Object Search              October 2021
 
 3.1.  Object Search Elements
 
-   <object-search:domain>
-   
-   <object-search:contact>
+   Filters
+
+   Generally: Limit, minimum characters
+
+   <object-search:domain>   
+   Domains: Name begins with, ends with, or contains. Zone, contact, host, status, crDate, upDate, exDate, trDate
    
    <object-search:host>
+   Host: IPv4, IPv6, Zone
+
+   <object-search:contact>
+   Contact: Name, Orga, Street, City, State, Postcode, Email, Voice, Fax, Country
 
 Sattler                    Expires April 13, 2022               [Page 4]
 
