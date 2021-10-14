@@ -163,7 +163,11 @@ Internet-Draft               EPP Object Search              October 2021
 
 3.1.  Object Search Elements
 
-   TBD
+   <object-search:domain>
+   
+   <object-search:contact>
+   
+   <object-search:host>
 
 Sattler                    Expires April 13, 2022               [Page 4]
 
