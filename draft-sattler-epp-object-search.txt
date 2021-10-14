@@ -144,37 +144,36 @@ Internet-Draft               EPP Object Search              October 2021
    Servers SHOULD (for a temporary migration period up to server policy)
    provide support for older versions of the extension in parallel to
    the newest version and allow clients to execute their preferred
-   version of the <info> command based on the maintenance <objURI>
-   elements of the server <greeting>. The version of the maintenance
-   <info> response MUST match the version of the maintenance <info>
+   version of the <info> command based on the object search <objURI>
+   elements of the server <greeting>. The version of the object search
+   <info> response MUST match the version of the object search <info>
    command executed by the server.
-   
-   Servers MUST return a Registry Maintenance Notification poll message
-   matching the newest negotiated version of the maintenance extension,
-   based on an intersection of the maintenance <objURI> elements in the
-   server <greeting> and the client <login> command. If the intersection
-   of the maintenance <objURI> elements of the server <greeting> and the
-   client <login> command results in an empty set, the server MUST
-   return the newest version of the Registry Maintenance Notification
-   poll message supported by the server based on "Usage with
-   Poll-Message EPP Responses" in Section 6 of [RFC9038].
 
 3.  Object Attributes
 
 3.1.  Object Search Elements
 
-   Filters
-
    Generally: Limit, minimum characters
 
-   <object-search:domain>   
-   Domains: Name begins with, ends with, or contains. Zone, contact, host, status, crDate, upDate, exDate, trDate
+   <object-search:domain>
+     The search pattern for the domain object; the attribute "type" is
+     REQUIRED and MUST either be "name", "contact", "host", "status",
+     "crDate", "upDate", "exDate", or "trDate". The attribute "filter"
+     REQUIRED and MUST be present to identify the filter and MUST either
+     be "exact", "begins", "ends", or "contains".
    
    <object-search:host>
-   Host: IPv4, IPv6, Zone
+     The search pattern for the host object; the attribute "type" is
+     REQUIRED and MUST either be "name", "ipv4", or "ipv6". The
+     attribute "filter" is REQUIRED and MUST be present to identify the
+     filter and MUST either be "exact", "begins", "ends", or "contains".
 
    <object-search:contact>
-   Contact: Name, Orga, Street, City, State, Postcode, Email, Voice, Fax, Country
+     The search pattern for the contact object; the attribute "type" is
+     REQUIRED and MUST either be "id", "name", "orga", "street", "city",
+     "state", "postcode", "email", "voice", "fax", or "country". The
+     attribute "filter" is REQUIRED and MUST be present to identify the
+     filter and MUST either be "exact", "begins", "ends", or "contains".
 
 Sattler                    Expires April 13, 2022               [Page 4]
 
@@ -226,7 +225,7 @@ Internet-Draft               EPP Object Search              October 2021
    C:    <info>
    C:      <object-search:info
    C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
-   C:        <object-search:domain>example
+   C:        <object-search:domain type="name" filter="begins">example
    C:        </object-search:domain>
    C:      </object-search:info>
    C:    </info>
@@ -296,7 +295,7 @@ Internet-Draft               EPP Object Search              October 2021
    C:    <info>
    C:      <object-search:info
    C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
-   C:        <object-search:contact>John
+   C:        <object-search:contact type="name" filter="contains">John
    C:        </object-search:contact>
    C:      </object-search:info>
    C:    </info>
@@ -362,7 +361,7 @@ Internet-Draft               EPP Object Search              October 2021
    C:    <info>
    C:      <object-search:info
    C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
-   C:        <object-search:host>example.com
+   C:        <object-search:host type="name" filter="ends">example.com
    C:        </object-search:host>
    C:      </object-search:info>
    C:    </info>
