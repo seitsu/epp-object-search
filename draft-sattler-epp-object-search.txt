@@ -10,7 +10,7 @@ Expires: April 16, 2022
 Abstract
 
    This document describes an Extensible Provisioning Protocol (EPP)
-   extension called "Object Search", used by EPP clients to search and
+   extension called "Object Search" used by EPP clients to search and
    list EPP objects stored by EPP servers.
 
 Status of This Memo
@@ -89,7 +89,7 @@ Internet-Draft               EPP Object Search              October 2021
    and registrars.
    
    Registrars can transform EPP objects either with <create>, <delete>,
-   <renew>, <transfer> or <update> according to [RFC5730]. They are
+   <renew>, <transfer>, or <update> according to [RFC5730]. They are
    usually responsible for maintaining their inventory themselves.
    
    Due to various reasons, such as consolidation of registrars,
@@ -152,10 +152,9 @@ Internet-Draft               EPP Object Search              October 2021
 3.  Object Attributes
 
 3.1.  Object Search Elements
-
-   The minimum character for a search pattern is up to server policy.
    
-   The limit for the search results is up to server policy.
+   The minimum character for a search pattern and the the limit for the
+   search results is up to server policy.
 
    <object-search:domain>
      The search pattern for the domain object; the attribute "type" is
@@ -688,10 +687,6 @@ Internet-Draft               EPP Object Search              October 2021
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-Sattler                    Expires April 16, 2022              [Page 14]
-
-Internet-Draft               EPP Object Search              October 2021
-
    [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
               STD 69, RFC 5730, DOI 10.17487/RFC5730, August 2009,
               <https://www.rfc-editor.org/info/rfc5730>.
@@ -700,6 +695,10 @@ Internet-Draft               EPP Object Search              October 2021
               Code: The Implementation Status Section", BCP 205,
               RFC 7942, DOI 10.17487/RFC7942, July 2016,
               <https://www.rfc-editor.org/info/rfc7942>.
+
+Sattler                    Expires April 16, 2022              [Page 14]
+
+Internet-Draft               EPP Object Search              October 2021
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
