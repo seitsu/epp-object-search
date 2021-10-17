@@ -1,8 +1,8 @@
 Internet Engineering Task Force (IETF)                        T. Sattler
 Internet-Draft
 Intended status: Standards Track
-Expires: April 13, 2022
-                                                        October 14, 2021
+Expires: April 16, 2022
+                                                        October 17, 2021
 
      Object Search for the Extensible Provisioning Protocol (EPP)
                     draft-sattler-epp-object-search-00
@@ -28,7 +28,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress".
 
-   This Internet-Draft will expire on April 13, 2022.
+   This Internet-Draft will expire on April 16, 2022.
 
 Copyright Notice
 
@@ -45,7 +45,7 @@ Copyright Notice
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
-Sattler                    Expires April 13, 2022               [Page 1]
+Sattler                    Expires April 16, 2022               [Page 1]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -65,19 +65,19 @@ Table of Contents
      4.2.  EPP Transform Commands  . . . . . . . . . . . . . . . . .  10
    5.  Formal Syntax . . . . . . . . . . . . . . . . . . . . . . . .  10
      5.1.  Object Search EPP Mapping Schema  . . . . . . . . . . . .  10
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  11
-     6.1.  XML Namespace . . . . . . . . . . . . . . . . . . . . . .  11
-     6.2.  EPP Extension Registry  . . . . . . . . . . . . . . . . .  11
-   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  11
-   8.  Implementation Status . . . . . . . . . . . . . . . . . . . .  12
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  12
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  12
-     9.2.  Informative References  . . . . . . . . . . . . . . . . .  13
-   Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  13
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  13
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  13
+     6.1.  XML Namespace . . . . . . . . . . . . . . . . . . . . . .  13
+     6.2.  EPP Extension Registry  . . . . . . . . . . . . . . . . .  13
+   7.  Security Considerations . . . . . . . . . . . . . . . . . . .  13
+   8.  Implementation Status . . . . . . . . . . . . . . . . . . . .  14
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  14
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  14
+     9.2.  Informative References  . . . . . . . . . . . . . . . . .  15
+   Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  15
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  15
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
      
-Sattler                    Expires April 13, 2022               [Page 2]
+Sattler                    Expires April 16, 2022               [Page 2]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -129,7 +129,7 @@ Internet-Draft               EPP Object Search              October 2021
    white space in examples are provided only to illustrate element
    relationships and are not a required feature of this protocol.
 
-Sattler                    Expires April 13, 2022               [Page 3]
+Sattler                    Expires April 16, 2022               [Page 3]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -177,7 +177,7 @@ Internet-Draft               EPP Object Search              October 2021
      attribute "filter" is REQUIRED and MUST be present to identify the
      filter and MUST either be "exact", "begins", "ends", or "contains".
 
-Sattler                    Expires April 13, 2022               [Page 4]
+Sattler                    Expires April 16, 2022               [Page 4]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -185,8 +185,8 @@ Internet-Draft               EPP Object Search              October 2021
 
    A detailed description of the EPP syntax and semantics can be found
    in the EPP core protocol specification [RFC5730]. The command
-   mappings described here are specifically used to notify registrars of
-   registry maintenance events and object mapping.
+   mappings described here are specifically used to search for objects
+   and object mapping.
 
 4.1.  EPP Query Commands
 
@@ -225,8 +225,8 @@ Internet-Draft               EPP Object Search              October 2021
    C:<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
    C:  <command>
    C:    <info>
-   C:      <object-search:info
-   C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
+   C:      <object-search:info xmlns:object-search=
+   C:        "urn:ietf:params:xml:ns:epp:object-search-0.1">
    C:        <object-search:domain type="name" filter="begins">example
    C:        </object-search:domain>
    C:      </object-search:info>
@@ -235,7 +235,7 @@ Internet-Draft               EPP Object Search              October 2021
    C:  </command>
    C:</epp>
 
-Sattler                    Expires April 13, 2022               [Page 5]
+Sattler                    Expires April 16, 2022               [Page 5]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -260,7 +260,7 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData xmlns:maint=
+   S:        <object-search:infData xmlns:object-search=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list total="2">
    S:            <object-search:item>
@@ -283,7 +283,7 @@ Internet-Draft               EPP Object Search              October 2021
    S:   </response>
    S:</epp>
 
-Sattler                    Expires April 13, 2022               [Page 6]
+Sattler                    Expires April 16, 2022               [Page 6]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -299,8 +299,8 @@ Internet-Draft               EPP Object Search              October 2021
    C:<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
    C:  <command>
    C:    <info>
-   C:      <object-search:info
-   C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
+   C:      <object-search:info xmlns:object-search=
+   C:        "urn:ietf:params:xml:ns:epp:object-search-0.1">
    C:        <object-search:contact type="name" filter="contains">John
    C:        </object-search:contact>
    C:      </object-search:info>
@@ -320,7 +320,7 @@ Internet-Draft               EPP Object Search              October 2021
    <object-search:item> element contains the <object-search:contact>
    child element defined in Section 3.1.
 
-Sattler                    Expires April 13, 2022               [Page 7]
+Sattler                    Expires April 16, 2022               [Page 7]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -334,7 +334,7 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData xmlns:maint=
+   S:        <object-search:infData xmlns:object-search=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list total="12345678">
    S:            <object-search:item>
@@ -369,8 +369,8 @@ Internet-Draft               EPP Object Search              October 2021
    C:<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
    C:  <command>
    C:    <info>
-   C:      <object-search:info
-   C:        xmlns:maint="urn:ietf:params:xml:ns:epp:object-search-0.1">
+   C:      <object-search:info xmlns:object-search=
+   C:        "urn:ietf:params:xml:ns:epp:object-search-0.1">
    C:        <object-search:host type="name" filter="ends">example.com
    C:        </object-search:host>
    C:      </object-search:info>
@@ -379,7 +379,7 @@ Internet-Draft               EPP Object Search              October 2021
    C:  </command>
    C:</epp>
 
-Sattler                    Expires April 13, 2022               [Page 8]
+Sattler                    Expires April 16, 2022               [Page 8]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -404,7 +404,7 @@ Internet-Draft               EPP Object Search              October 2021
    S:         <msg>Command completed successfully</msg>
    S:      </result>
    S:      <resData>
-   S:        <object-search:infData xmlns:maint=
+   S:        <object-search:infData xmlns:object-search=
    S:          "urn:ietf:params:xml:ns:epp:object-search-0.1">
    S:          <object-search:list total="34567">
    S:            <object-search:item>
@@ -427,7 +427,7 @@ Internet-Draft               EPP Object Search              October 2021
    S:   </response>
    S:</epp>
 
-Sattler                    Expires April 13, 2022               [Page 9]
+Sattler                    Expires April 16, 2022               [Page 9]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -464,14 +464,140 @@ Internet-Draft               EPP Object Search              October 2021
          "urn:ietf:params:xml:ns:epp:object-search-0.1"
        xmlns="https://www.w3.org/2001/XMLSchema"
        elementFormDefault="qualified">
+     <!--
+     Import common element types
+     -->
+     <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
+     <import namespace="urn:ietf:params:xml:ns:epp-1.0"/>
+     <annotation>
+       <documentation>
+         Extensible Provisioning Protocol v1.0
+         Object Search Mapping Schema.
+       </documentation>
+     </annotation>
+     <!--
+      Info Response element
+     -->
+     <element name="infData" type="object-search:infDataType"/>
+     <!--
+      <info> response elements.
+     -->
+     <complexType name="infDataType">
+       <sequence>
 
+Sattler                    Expires April 16, 2022              [Page 10]
+
+Internet-Draft               EPP Object Search              October 2021
+
+         <element name="list" type="object-search:listDataType"/>
+       </sequence>
+     </complexType>
+     <!--
+      Attributes associated with the list info response
+     -->
+     <complexType name="listDataType">
+       <choice>
+         <element name="item" type="object-search:domainItemType"
+          minOccurs="0" maxOccurs="unbounded"/>
+         <element name="item" type="object-search:contactItemType"
+          minOccurs="0" maxOccurs="unbounded"/>
+         <element name="item" type="object-search:hostItemType"
+          minOccurs="0" maxOccurs="unbounded"/>
+       </choice>
+     </complexType>
+     <!--
+      Attributes associated with the list item info response
+     -->
+     <complexType name="domainItemType">
+       <sequence>
+         <element name="type" type="object-search:domainTypeEnum"/>
+         <element name="filter" type="object-search:filterEnum"/>
+       </sequence>
+     </complexType>
+     <!--
+      Attributes associated with the list item info response
+     -->
+     <complexType name="contactItemType">
+       <sequence>
+         <element name="type" type="object-search:contactTypeEnum"/>
+         <element name="filter" type="object-search:filterEnum"/>
+       </sequence>
+     </complexType>
+     <!--
+      Attributes associated with the list item info response
+     -->
+     <complexType name="hostItemType">
+       <sequence>
+         <element name="type" type="object-search:hostTypeEnum"/>
+         <element name="filter" type="object-search:filterEnum"/>
+       </sequence>
+     </complexType>
+     <!--
+      Enumerated list of domain types
+     -->
+     <simpleType name="domainTypeEnum">
+       <restriction base="token">
+         <enumeration value="name"/>
+         <enumeration value="contact"/>
+         <enumeration value="host"/>
+         <enumeration value="status"/>
+
+Sattler                    Expires April 16, 2022              [Page 11]
+
+Internet-Draft               EPP Object Search              October 2021
+
+         <enumeration value="crDate"/>
+         <enumeration value="upDate"/>
+         <enumeration value="exDate"/>
+         <enumeration value="trDate"/>
+       </restriction>
+     </simpleType>
+     <!--
+      Enumerated list of contact types
+     -->
+     <simpleType name="contactTypeEnum">
+       <restriction base="token">
+         <enumeration value="id"/>
+         <enumeration value="name"/>
+         <enumeration value="orga"/>
+         <enumeration value="street"/>
+         <enumeration value="city"/>
+         <enumeration value="state"/>
+         <enumeration value="postcode"/>
+         <enumeration value="email"/>
+         <enumeration value="voice"/>
+         <enumeration value="fax"/>
+         <enumeration value="country"/>
+       </restriction>
+     </simpleType>
+     <!--
+      Enumerated list of host types
+     -->
+     <simpleType name="hostTypeEnum">
+       <restriction base="token">
+         <enumeration value="name"/>
+         <enumeration value="ipv4"/>
+         <enumeration value="ipv6"/>
+       </restriction>
+     </simpleType>
+     <!--
+      Enumerated list of filters
+     -->
+     <simpleType name="filterEnum">
+       <restriction base="token">
+         <enumeration value="exact"/>
+         <enumeration value="begins"/>
+         <enumeration value="ends"/>
+         <enumeration value="contains"/>
+       </restriction>
+     </simpleType>
      <!--
       End of schema.
      -->
      </schema>
     <CODE ENDS>
 
-Sattler                    Expires April 13, 2022              [Page 10]
+Sattler                    Expires April 16, 2022              [Page 12]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -514,7 +640,7 @@ Internet-Draft               EPP Object Search              October 2021
    protocol layers used by EPP.  The security considerations described
    in these other specifications apply to this specification as well.
 
-Sattler                    Expires April 13, 2022              [Page 11]
+Sattler                    Expires April 16, 2022              [Page 13]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -562,7 +688,7 @@ Internet-Draft               EPP Object Search              October 2021
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
-Sattler                    Expires April 13, 2022              [Page 12]
+Sattler                    Expires April 16, 2022              [Page 14]
 
 Internet-Draft               EPP Object Search              October 2021
 
@@ -605,5 +731,5 @@ Authors' Addresses
    Email: mail@tobiassattler.com
    URI:   https://tobiassattler.com
 
-Sattler                    Expires April 13, 2022              [Page 13]
+Sattler                    Expires April 16, 2022              [Page 15]
 
