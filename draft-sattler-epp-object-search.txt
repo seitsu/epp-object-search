@@ -1,8 +1,8 @@
 Internet Engineering Task Force (IETF)                        T. Sattler
 Internet-Draft
-Intended status: Standards Track
-Expires: April 16, 2022
-                                                        October 17, 2021
+Intended status: Standards Track                               J. Kolker
+Expires: April 16, 2022                                     GoDaddy Inc.
+                                                       December 14, 2021
 
      Object Search for the Extensible Provisioning Protocol (EPP)
                     draft-sattler-epp-object-search-00
@@ -47,7 +47,7 @@ Copyright Notice
 
 Sattler                    Expires April 16, 2022               [Page 1]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 Table of Contents
 
@@ -79,7 +79,7 @@ Table of Contents
      
 Sattler                    Expires April 16, 2022               [Page 2]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 1.  Introduction
 
@@ -131,7 +131,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 3]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 2.  Migrating to Newer Versions of This Extension
 
@@ -178,7 +178,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 4]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 4.  EPP Command Mapping
 
@@ -236,7 +236,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 5]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
    When an <info> command has been processed successfully, the EPP
    <resData> element MUST contain a child <object-search:infData>
@@ -284,7 +284,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 6]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 4.1.1.2. Object Search Contacts
 
@@ -321,7 +321,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 7]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
    Example of returning the list of object search items in an <info>
    response.
@@ -380,7 +380,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 8]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
    When an <info> command has been processed successfully, the EPP
    <resData> element MUST contain a child <object-search:infData>
@@ -428,7 +428,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022               [Page 9]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 4.2.  EPP Transform Commands
 
@@ -486,7 +486,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022              [Page 10]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
          <element name="list" type="object-search:listDataType"/>
        </sequence>
@@ -543,7 +543,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022              [Page 11]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
          <enumeration value="crDate"/>
          <enumeration value="upDate"/>
@@ -598,7 +598,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022              [Page 12]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 6.  IANA Considerations
 
@@ -641,7 +641,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022              [Page 13]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
 8.  Implementation Status
 
@@ -698,7 +698,7 @@ Internet-Draft               EPP Object Search              October 2021
 
 Sattler                    Expires April 16, 2022              [Page 14]
 
-Internet-Draft               EPP Object Search              October 2021
+Internet-Draft               EPP Object Search             December 2021
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -729,6 +729,16 @@ Authors' Addresses
 
    Email: mail@tobiassattler.com
    URI:   https://tobiassattler.com
+
+
+   Jody Kolker
+   GoDaddy Inc.
+   2155 E GoDaddy Way
+   Tempe, AZ  85284
+   United States of America
+
+   Email: jkolker@godaddy.com
+   URI:   https://www.godaddy.com
 
 Sattler                    Expires April 16, 2022              [Page 15]
 
