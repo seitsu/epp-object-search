@@ -1,16 +1,16 @@
 Internet Engineering Task Force (IETF)                        T. Sattler
 Internet-Draft
 Intended status: Standards Track                               J. Kolker
-Expires: April 16, 2022                                     GoDaddy Inc.
-                                                       December 14, 2021
+Expires: January 3, 2022                                    GoDaddy Inc.
+                                                       December 21, 2021
 
      Object Search for the Extensible Provisioning Protocol (EPP)
-                    draft-sattler-epp-object-search-00
+                 draft-sattler-kolker-epp-object-search-00
 
 Abstract
 
    This document describes an Extensible Provisioning Protocol (EPP)
-   extension called "Object Search" used by EPP clients to search and
+   extension called "Object Search", which EPP clients use to search and
    list EPP objects stored by EPP servers.
 
 Status of This Memo
@@ -28,7 +28,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress".
 
-   This Internet-Draft will expire on April 16, 2022.
+   This Internet-Draft will expire on January 3, 2022.
 
 Copyright Notice
 
@@ -45,7 +45,7 @@ Copyright Notice
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
-Sattler & Kolker           Expires April 16, 2022               [Page 1]
+Sattler & Kolker          Expires January 3, 2022               [Page 1]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -77,7 +77,7 @@ Table of Contents
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  15
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  15
      
-Sattler & Kolker           Expires April 16, 2022               [Page 2]
+Sattler & Kolker          Expires January 3, 2022               [Page 2]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -129,7 +129,7 @@ Internet-Draft               EPP Object Search             December 2021
    white space in examples are provided only to illustrate element
    relationships and are not a required feature of this protocol.
 
-Sattler & Kolker           Expires April 16, 2022               [Page 3]
+Sattler & Kolker          Expires January 3, 2022               [Page 3]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -176,7 +176,7 @@ Internet-Draft               EPP Object Search             December 2021
      attribute "filter" is REQUIRED and MUST be present to identify the
      filter and MUST either be "exact", "begins", "ends", or "contains".
 
-Sattler & Kolker           Expires April 16, 2022               [Page 4]
+Sattler & Kolker          Expires January 3, 2022               [Page 4]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -234,7 +234,7 @@ Internet-Draft               EPP Object Search             December 2021
    C:  </command>
    C:</epp>
 
-Sattler & Kolker           Expires April 16, 2022               [Page 5]
+Sattler & Kolker          Expires January 3, 2022               [Page 5]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -282,7 +282,7 @@ Internet-Draft               EPP Object Search             December 2021
    S:   </response>
    S:</epp>
 
-Sattler & Kolker           Expires April 16, 2022               [Page 6]
+Sattler & Kolker          Expires January 3, 2022               [Page 6]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -319,7 +319,7 @@ Internet-Draft               EPP Object Search             December 2021
    <object-search:item> element contains the <object-search:contact>
    child element defined in Section 3.1.
 
-Sattler & Kolker           Expires April 16, 2022               [Page 7]
+Sattler & Kolker          Expires January 3, 2022               [Page 7]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -378,7 +378,7 @@ Internet-Draft               EPP Object Search             December 2021
    C:  </command>
    C:</epp>
 
-Sattler & Kolker           Expires April 16, 2022               [Page 8]
+Sattler & Kolker          Expires January 3, 2022               [Page 8]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -426,7 +426,7 @@ Internet-Draft               EPP Object Search             December 2021
    S:   </response>
    S:</epp>
 
-Sattler & Kolker           Expires April 16, 2022               [Page 9]
+Sattler & Kolker          Expires January 3, 2022               [Page 9]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -484,7 +484,7 @@ Internet-Draft               EPP Object Search             December 2021
      <complexType name="infDataType">
        <sequence>
 
-Sattler & Kolker           Expires April 16, 2022              [Page 10]
+Sattler & Kolker          Expires January 3, 2022              [Page 10]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -541,7 +541,7 @@ Internet-Draft               EPP Object Search             December 2021
          <enumeration value="host"/>
          <enumeration value="status"/>
 
-Sattler & Kolker           Expires April 16, 2022              [Page 11]
+Sattler & Kolker          Expires January 3, 2022              [Page 11]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -596,7 +596,7 @@ Internet-Draft               EPP Object Search             December 2021
      </schema>
     <CODE ENDS>
 
-Sattler & Kolker           Expires April 16, 2022              [Page 12]
+Sattler & Kolker          Expires January 3, 2022              [Page 12]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -639,7 +639,7 @@ Internet-Draft               EPP Object Search             December 2021
    protocol layers used by EPP.  The security considerations described
    in these other specifications apply to this specification as well.
 
-Sattler & Kolker           Expires April 16, 2022              [Page 13]
+Sattler & Kolker          Expires January 3, 2022              [Page 13]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -696,7 +696,7 @@ Internet-Draft               EPP Object Search             December 2021
               RFC 7942, DOI 10.17487/RFC7942, July 2016,
               <https://www.rfc-editor.org/info/rfc7942>.
 
-Sattler & Kolker           Expires April 16, 2022              [Page 14]
+Sattler & Kolker          Expires January 3, 2022              [Page 14]
 
 Internet-Draft               EPP Object Search             December 2021
 
@@ -740,5 +740,5 @@ Authors' Addresses
    Email: jkolker@godaddy.com
    URI:   https://www.godaddy.com
 
-Sattler & Kolker           Expires April 16, 2022              [Page 15]
+Sattler & Kolker          Expires January 3, 2022              [Page 15]
 
